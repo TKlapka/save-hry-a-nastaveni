@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<save_hry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="game_save.xsd">
+  <!--Nastavení hry-->
+  <nastaveni_Hry>
+    <zobrazeni>
+      <rozliseni>
+        <sirka>1920</sirka>
+        <vyska>1080</vyska>
+        <frekvence>60</frekvence>
+      </rozliseni>
+      <jas>5</jas>
+      <jazyk>EN</jazyk>
+      <titulky>true</titulky>
+      <hud>true</hud>
+      <fov>110</fov>
+      <barvoslepost>false</barvoslepost>
+    </zobrazeni>
+    <graficke_nastaveni directX="dx11">
+      <kvalita_textur>vysoka</kvalita_textur>
+      <kvalita_stinu>vysoka</kvalita_stinu>
+      <kvalita_efektu>vysoka</kvalita_efektu>
+      <post_proces>true</post_proces>
+      <odrazy>true</odrazy>
+      <kvalita_odrazu>vysoka</kvalita_odrazu>
+    </graficke_nastaveni>
+    <nastavení_zvuku>
+      <celkova_hlasitost>10</celkova_hlasitost>
+      <hlasitost_efektu>8</hlasitost_efektu>
+      <hlasitost_dialogu>10</hlasitost_dialogu>
+      <hlasitost_hudby>5</hlasitost_hudby>
+    </nastavení_zvuku>
+    <ovladani>
+      <citlivost_mysi>5</citlivost_mysi>
+    </ovladani>
+  </nastaveni_Hry>
+  <!--Save 1-->
+  <savy>
+    <save id="1" jmeno="Save001" obrazek="save_scrn1.png">
+      <informace>
+        <datum>2017-04-12</datum>
+        <cas>14:15:30</cas>
+      </informace>
+      <postava jmeno="Lone Wanderer">
+        <pozice>
+          <x>11890</x>
+          <y>950</y>
+          <z>105</z>
+          <rotace>160</rotace>
+        </pozice>
+        <staty>
+          <level xp="34100">11</level>
+          <zdraví nemocen="true" zranen="false" otraven="false" doba_otraveni="0" dech_podvodou="100">100</zdraví>
+          <vydrz>89</vydrz>
+          <teplo>69</teplo>
+          <hlad>53</hlad>
+          <zizen>14</zizen>
+          <unava>41</unava>
+        </staty>
+        <vybaveni>
+          <hlava kvalita="dobra" stav="98">pletena cepice</hlava>
+          <telo kvalita="nizka" stav="42">zateplena kombineza</telo>
+          <boty kvalita="vyborna" stav="67">kanady</boty>
+          <batoh kvalita="dobra" stav="11" nosnost="5">skolni batoh</batoh>
+          <primarni_zbran kvalita="stredni" stav="43">kulovnice</primarni_zbran>
+          <sekundarni_zbran kvalita="dobra" stav="48">lovecky nuz</sekundarni_zbran>
+        </vybaveni>
+        <inventar>
+          <id_veci mnozstvi="6">11</id_veci>
+          <id_veci mnozstvi="19">165</id_veci>
+          <id_veci mnozstvi="1">54</id_veci>
+        </inventar>
+      </postava>
+      <npc>
+        <nepratele typ="vlk" id="8">
+          <pozice>
+            <x>11830</x>
+            <y>1010</y>
+            <z>107</z>
+            <rotace>19</rotace>
+          </pozice>
+          <staty>
+            <level>8</level>
+            <zdraví otraven="false" zranen="true" doba_otraveni="0">100</zdraví>
+            <vydrz>41</vydrz>
+            <agrese>vysoka</agrese>
+          </staty>
+          <veci>
+            <id_veci mnozstvi="3">54</id_veci>
+            <id_veci mnozstvi="11">64</id_veci>
+          </veci>
+        </nepratele>
+        <spolecnik typ="pes" id="5">
+          <pozice>
+            <x>1190</x>
+            <y>940</y>
+            <z>105</z>
+            <rotace>176</rotace>
+          </pozice>
+          <staty>
+            <level xp="1145">5</level>
+            <zdraví oraven="false" zranen="false" doba_otraveni="0">96</zdraví>
+            <vydrz>44</vydrz>
+            <agrese>nizka</agrese>
+            <hlad>69</hlad>
+          </staty>
+          <vybaveni>
+            <telo kvalita="dobra" stav="46">psi vesta s kapsami</telo>
+          </vybaveni>
+          <veci>
+            <id_veci mnozstvi="4">49</id_veci>
+          </veci>
+        </spolecnik>
+      </npc>
+    </save>
+    <!--Save 2-->
+    <save id="2" jmeno="Save002" obrazek="save_scrn2.png">
+      <informace>
+        <datum>2017-04-12</datum>
+        <cas>19:35:40</cas>
+      </informace>
+      <postava jmeno="Chosen One">
+        <pozice>
+          <x>190</x>
+          <y>9500</y>
+          <z>19</z>
+          <rotace>17</rotace>
+        </pozice>
+        <staty>
+          <level xp="30">1</level>
+          <zdraví nemocen="false" zranen="false" otraven="false" doba_otraveni="0" dech_podvodou="100">100</zdraví>
+          <vydrz>100</vydrz>
+          <teplo>100</teplo>
+          <hlad>100</hlad>
+          <zizen>80</zizen>
+          <unava>90</unava>
+        </staty>
+        <vybaveni>
+          <hlava kvalita="nizka" stav="1">ksiltovka</hlava>
+          <telo kvalita="vyborna" stav="92">triko</telo>
+          <boty kvalita="vyborna" stav="97">sandale</boty>
+          <batoh kvalita="dobra" stav="19" nosnost="5">ledvinka</batoh>
+          <primarni_zbran kvalita="nizka" stav="11">revolver</primarni_zbran>
+          <sekundarni_zbran kvalita="dobra" stav="48">kapesni nuz</sekundarni_zbran>
+        </vybaveni>
+        <inventar>
+          <id_veci mnozstvi="6">16</id_veci>
+          <id_veci mnozstvi="1">1</id_veci>
+        </inventar>
+      </postava>
+      <npc>
+        <nepratele typ="medved" id="4">
+          <pozice>
+            <x>130</x>
+            <y>9010</y>
+            <z>101</z>
+            <rotace>180</rotace>
+          </pozice>
+          <staty>
+            <level>8</level>
+            <zdraví otraven="true" zranen="false" doba_otraveni="9">74</zdraví>
+            <vydrz>93</vydrz>
+            <agrese>vysoka</agrese>
+          </staty>
+          <veci>
+            <id_veci mnozstvi="3">57</id_veci>
+          </veci>
+        </nepratele>
+      </npc>
+    </save>
+    <!--Save 3-->
+    <save id="3" jmeno="Save003" obrazek="save_scrn3.png">
+      <informace>
+        <datum>2017-04-13</datum>
+        <cas>11:55:59</cas>
+      </informace>
+      <postava jmeno="Courier">
+        <pozice>
+          <x>1900</x>
+          <y>900</y>
+          <z>109</z>
+          <rotace>170</rotace>
+        </pozice>
+        <staty>
+          <level xp="300">3</level>
+          <zdraví nemocen="false" zranen="false" otraven="true" doba_otraveni="12" dech_podvodou="19">89</zdraví>
+          <vydrz>45</vydrz>
+          <teplo>40</teplo>
+          <hlad>80</hlad>
+          <zizen>43</zizen>
+          <unava>11</unava>
+        </staty>
+        <vybaveni>
+          <hlava kvalita="nizka" stav="1">ksiltovka</hlava>
+          <telo kvalita="vyborna" stav="92">triko</telo>
+          <boty kvalita="vyborna" stav="67">kanady</boty>
+          <batoh kvalita="dobra" stav="11" nosnost="5">skolni batoh</batoh>
+          <primarni_zbran kvalita="stredni" stav="43">kulovnice</primarni_zbran>
+          <sekundarni_zbran kvalita="dobra" stav="48">lovecky nuz</sekundarni_zbran>
+        </vybaveni>
+        <inventar>
+          <id_veci mnozstvi="60">45</id_veci>
+          <id_veci mnozstvi="19">11</id_veci>
+        </inventar>
+      </postava>
+      <npc>
+        <spolecnik typ="kočka" id="3">
+          <pozice>
+            <x>1900</x>
+            <y>940</y>
+            <z>105</z>
+            <rotace>176</rotace>
+          </pozice>
+          <staty>
+            <level xp="11450">8</level>
+            <zdraví oraven="false" zranen="true" doba_otraveni="0">46</zdraví>
+            <vydrz>49</vydrz>
+            <agrese>vysoka</agrese>
+            <hlad>99</hlad>
+          </staty>
+          <vybaveni>
+            <telo kvalita="dobra" stav="97">obojek</telo>
+          </vybaveni>
+          <veci>
+            <id_veci mnozstvi="9">9</id_veci>
+          </veci>
+        </spolecnik>
+      </npc>
+    </save>
+    <!--Save 4-->
+    <save id="4" jmeno="Save004" obrazek="save_scrn4.png">
+      <informace>
+        <datum>2017-04-13</datum>
+        <cas>18:55:59</cas>
+      </informace>
+      <postava jmeno="Sole Survivor">
+        <pozice>
+          <x>8910</x>
+          <y>450</y>
+          <z>190</z>
+          <rotace>10</rotace>
+        </pozice>
+        <staty>
+          <level xp="7975">7</level>
+          <zdraví nemocen="false" zranen="false" otraven="true" doba_otraveni="12" dech_podvodou="19">89</zdraví>
+          <vydrz>45</vydrz>
+          <teplo>40</teplo>
+          <hlad>80</hlad>
+          <zizen>43</zizen>
+          <unava>11</unava>
+        </staty>
+        <vybaveni>
+          <hlava kvalita="nizka" stav="1">AED helma</hlava>
+          <telo kvalita="vyborna" stav="92">SWAT neprustelna vesta</telo>
+          <boty kvalita="vyborna" stav="67">sedmi milove boty</boty>
+          <batoh kvalita="dobra" stav="11" nosnost="5">kouzelny vacek</batoh>
+          <primarni_zbran kvalita="stredni" stav="43">plasmova puska</primarni_zbran>
+          <sekundarni_zbran kvalita="dobra" stav="48">svetelny mec</sekundarni_zbran>
+        </vybaveni>
+        <inventar>
+          <id_veci mnozstvi="60">45</id_veci>
+          <id_veci mnozstvi="19">11</id_veci>
+        </inventar>
+      </postava>
+      <npc>
+        <spolecnik typ="savlozuby tygr" id="666">
+          <pozice>
+            <x>8900</x>
+            <y>440</y>
+            <z>195</z>
+            <rotace>16</rotace>
+          </pozice>
+          <staty>
+            <level xp="66666">666</level>
+            <zdraví oraven="false" zranen="false" doba_otraveni="0">100</zdraví>
+            <vydrz>100</vydrz>
+            <agrese>vysoka</agrese>
+            <hlad>99</hlad>
+          </staty>
+          <vybaveni>
+            <telo kvalita="dobra" stav="97">jezdecke sedlo</telo>
+          </vybaveni>
+          <veci>
+            <id_veci mnozstvi="9">9</id_veci>
+          </veci>
+        </spolecnik>
+      </npc>
+    </save>
+    <!--Save 5-->
+    <save id="5" jmeno="Save005" obrazek="save_scrn5.png">
+      <informace>
+        <datum>2017-04-16</datum>
+        <cas>23:59:59</cas>
+      </informace>
+      <postava jmeno="Vault Dweller">
+        <pozice>
+          <x>10110</x>
+          <y>4910</y>
+          <z>120</z>
+          <rotace>109</rotace>
+        </pozice>
+        <staty>
+          <level xp="79761">81</level>
+          <zdraví nemocen="true" zranen="false" otraven="false" doba_otraveni="12" dech_podvodou="19">39</zdraví>
+          <vydrz>49</vydrz>
+          <teplo>11</teplo>
+          <hlad>45</hlad>
+          <zizen>18</zizen>
+          <unava>41</unava>
+        </staty>
+        <vybaveni>
+          <hlava kvalita="nizka" stav="1">armadni helma</hlava>
+          <telo kvalita="vyborna" stav="92">vault-tec kombineza</telo>
+          <boty kvalita="vyborna" stav="67">kozene boty</boty>
+          <batoh kvalita="dobra" stav="11" nosnost="5">batoh</batoh>
+          <primarni_zbran kvalita="stredni" stav="43">ak-47</primarni_zbran>
+          <sekundarni_zbran kvalita="dobra" stav="48">perlik</sekundarni_zbran>
+        </vybaveni>
+        <inventar>
+          <id_veci mnozstvi="49">95</id_veci>
+          <id_veci mnozstvi="190">80</id_veci>
+        </inventar>
+      </postava>
+      <npc>
+        <spolecnik typ="pes" id="6">
+          <pozice>
+            <x>10100</x>
+            <y>4940</y>
+            <z>125</z>
+            <rotace>106</rotace>
+          </pozice>
+          <staty>
+            <level xp="64546">76</level>
+            <zdraví oraven="false" zranen="false" doba_otraveni="0">100</zdraví>
+            <vydrz>100</vydrz>
+            <agrese>pasivni</agrese>
+            <hlad>99</hlad>
+          </staty>
+          <vybaveni>
+            <telo kvalita="dobra" stav="97">cerveny satek</telo>
+          </vybaveni>
+          <veci>
+            <id_veci mnozstvi="19">94</id_veci>
+          </veci>
+        </spolecnik>
+      </npc>
+    </save>
+  </savy>
+</save_hry>

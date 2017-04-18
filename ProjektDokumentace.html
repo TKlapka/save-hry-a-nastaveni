@@ -1,0 +1,478 @@
+﻿<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Tomáš Klapka - projekt nastavení a uložení hry</title>
+</head>
+<body>
+    <h1>Tomáš Klapka - projekt nastavení a uložení hry</h1>
+    <nav>
+        <h2>Navigace</h2>
+        <ul>
+            <li><a href="#uvod">Úvod</a></li>
+            <li><a href="#metodika">Metodika</a></li>
+            <li>
+                <a href="#popis">Popis elementů a atributů</a>
+                <ul>
+                    <li><a href="#elementy">Elementy</a></li>
+                    <li><a href="#atributy">Atributy</a></li>
+                </ul>
+            </li>
+            <li><a href="#transformace">Popis transformace</a></li>
+            <li><a href="#zaver">Závěr</a></li>
+            <li><a href="#autor">Autor</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <header>
+                <a id="uvod"></a>
+                <h2>Úvod</h2>
+                <p>
+                    Jako téma semestrální práce jsem si zvolil nastavení hry a uložení fiktivní nespecifikovanou survival hru (hru o přežití).<br>Toto téma jsem si zvolil neboť video hry jsou mojím koníčkem a ukládání her a nastavení je často prováděno souborem XML.
+                </p>
+                <p>XML tu tedy bude sloužit k uložení nastavení aplikace a také k uložení jednotlivých rozehraných her.</p>              
+            </header>
+        </section>
+        <hr />
+        <section>
+            <header>
+                <a id="metodika"></a>
+                <h2>Metodika</h2>
+            </header>
+                <h3>Použité programy</h3>
+                <ul>
+                    <li>Google Chrome</li>
+                    <li>Visual studio</li>
+                    <li>Sublime text</li>
+                </ul>
+                <p>
+                    Pro tvrobu jsem využil hlavně Sublime Text a Visual Studio 2015.                    
+                </p>
+                <p>
+                    Většinu informací jsem našel na stránkách <a href="https://www.w3schools.com/">W3Schools</a> nebo <a href="https://www.stackoverflow.com/">stackoverflow</a>. <br/>
+                    Pro provedení validace jsem využil <a href="https://validator.w3.org/">W3 validator</a>
+                </p>
+                <p>
+                    Tuto dokumentaci jsem vytvořil pomocí Sublime Text a zobrazení zkoušel pomocí Google Chrome.
+                </p>
+        </section>
+        <hr />
+        <section>
+            <header>
+                <a id="popis"></a>
+                <h2>Popis elementů a atributů</h2>
+            </header>
+                <h3>Elementy</h3>
+                <table border="1" id="elementy" title="Tabulka elementů">
+                    <tr>
+                        <th>Název Elementu</th>
+                        <th>Popis</th>
+                        <th>Omezení hodnot</th>
+                    </tr>
+                    <tr>
+                        <td>save_hry</td>
+                        <td>základní uzel pro uložené nastavení a hry</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>nastaveni_Hry</td>
+                        <td>základní uzel pro nastavení hry</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>rozliseni</td>
+                        <td>základní uzel pro hodnoty rozlišení</td>
+                        <td>Ushort</td>
+                    </tr>
+                    <tr>
+                        <td>sirka</td>
+                        <td>horizontální rozlišení</td>
+                        <td>Integer, minimální hodnota 0</td>
+                    </tr>
+                    <tr>
+                        <td>vyska</td>
+                        <td>vertikální rozlišení</td>
+                        <td>Integer, minimální hodnota 0</td>
+                    </tr>
+                    <tr>
+                        <td>frekvence</td>
+                        <td>obnovovací frekvence</td>
+                        <td>Integer, hodnoty 60-120</td>
+                    </tr>
+                    <tr>
+                        <td>jas</td>
+                        <td>jas hry</td>
+                        <td>Integer, hodnoty od 0 do 10</td>
+                    </tr>
+                    <tr>
+                        <td>jazyk</td>
+                        <td>nastavení jazyku</td>
+                        <td>enumerace (EN; CZ; PL; GE)</td>
+                    </tr>
+                    <tr>
+                        <td>titulky</td>
+                        <td>nastavení titulků</td>
+                        <td>boolean</td>
+                    </tr>
+                    <tr>
+                        <td>hudy</td>
+                        <td>grafické rozhraní on/off</td>
+                        <td>boolean</td>
+                    </tr>
+                    <tr>
+                        <td>fov</td>
+                        <td>nastavení field of view</td>
+                        <td>Integer, hodnoty od 0 do 360</td>
+                    </tr>
+                    <tr>
+                        <td>barvoslepost</td>
+                        <td>nastavení módu pro barvoslepé</td>
+                        <td>boolean</td>
+                    </tr>
+                    <tr>
+                        <td>graficke_nastaveni</td>
+                        <td>základní kořen pro grafické nastavení</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>kvalita_textur</td>
+                        <td>kvalita textur modelů</td>
+                        <td>enumerace (nizka;stredni;vysoka)</td>
+                    </tr>
+                    <tr>
+                        <td>kvalita_stinu</td>
+                        <td>kvalita ostrosti stínů</td>
+                        <td>enumerace (nizka;stredni;vysoka)</td>
+                    </tr>
+                    <tr>
+                        <td>kvalita_efektu</td>
+                        <td>kvalita vizuálních efektů, kouře a vody</td>
+                        <td>enumerace (nizka;stredni;vysoka)</td>
+                    </tr>
+                    <tr>
+                        <td>post_proces</td>
+                        <td>post proces on/off</td>
+                        <td>boolean</td>
+                    </tr>
+                    <tr>
+                        <td>odrazy</td>
+                        <td>kvalita odrazu a zrcadlení</td>
+                        <td>enumerace (nizka;stredni;vysoka)</td>
+                    </tr>
+                    <tr>
+                        <td>nastaveni_zvuku</td>
+                        <td>základní kořen pro nastavení zvuku</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>celkova_hlasitost</td>
+                        <td>Celková hlasitost hry</td>
+                        <td>Integer, hodnoty od 0 do 10</td>
+                    </tr>
+                    <tr>
+                        <td>hlasitost_efektu</td>
+                        <td>Celková hlasitost hry</td>
+                        <td>Integer, hodnoty od 0 do 10</td>
+                    </tr>
+                    <tr>
+                        <td>hlasitost_dialogu</td>
+                        <td>Celková hlasitost hry</td>
+                        <td>Integer, hodnoty od 0 do 10</td>
+                    </tr>
+                    <tr>
+                        <td>hlasitost_hudby</td>
+                        <td>Celková hlasitost hry</td>
+                        <td>Integer, hodnoty od 0 do 10</td>
+                    </tr>
+                    <tr>
+                        <td>ovladani</td>
+                        <td>základní uzel pro nastavení ovládání myši</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>citlivost_mysi</td>
+                        <td>nastavuje citlivost myši</td>
+                        <td>Integer, hodnoty od 0 do 10</td>
+                    </tr>
+                    <tr>
+                        <td>savy</td>
+                        <td>základní uzel pro ukládání her</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>save</td>
+                        <td>uzel jednotlivých uložených her</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>informace</td>
+                        <td>kořen informací, kdy došlo k uložení hry</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>datum</td>
+                        <td>který den došlo k ulození hry</td>
+                        <td>date</td>
+                    </tr>
+                    <tr>
+                        <td>date</td>
+                        <td>jaký čas došlo k uložení hry</td>
+                        <td>time</td>
+                    </tr>
+                    <tr>
+                        <td>postava</td>
+                        <td>základní uzel zapouzdřující informaci postavy</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>pozice</td>
+                        <td>uzel pro zachování pozice postavy na mapě</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>x</td>
+                        <td>souřadnice na ose x</td>
+                        <td>integer</td>
+                    </tr>
+                    <tr>
+                        <td>y</td>
+                        <td>souřadnice na ose y</td>
+                        <td>integer</td>
+                    </tr>
+                    <tr>
+                        <td>z</td>
+                        <td>souřadnice na ose z</td>
+                        <td>integer</td>
+                    </tr>
+                    <tr>
+                        <td>rotace</td>
+                        <td>úhel otočení postavy v porovnání se severem</td>
+                        <td>integer, hodnoty 0 až 360</td>
+                    </tr>
+                    <tr>
+                        <td>staty</td>
+                        <td>statistiky hráče v době uložení</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>level</td>
+                        <td>aktuální level postavy</td>
+                        <td>Integer</td>
+                    </tr>
+                    <tr>
+                        <td>zdraví</td>
+                        <td>aktuální hodntoa zdraví hráče v době uložení</td>
+                        <td>integer, hodnoty od 0 do 100</td>
+                    </tr> 
+                    <tr>
+                        <td>vydrz</td>
+                        <td>aktuální hodnota výdrže</td>
+                        <td>Integer, hodnoty od 0 do 100</td>
+                    </tr>
+                    <tr>
+                        <td>teplo</td>
+                        <td>aktuální hodnota teploty postavy</td>
+                        <td>integer, od 0 do 100</td>
+                    </tr> 
+                    <tr>
+                        <td>hlad</td>
+                        <td>aktuální hodnota nasytosti postavy</td>
+                        <td>integer, od 0 do 100</td>
+                    </tr> 
+                    <tr>
+                        <td>zizen</td>
+                        <td>aktuální hodnota žízně postavy (čím menší tím horší)</td>
+                        <td>integer, od 0 do 100</td>
+                    </tr>
+                    <tr>
+                        <td>unava</td>
+                        <td>aktuální hodnota vyspalosti hrace</td>
+                        <td>integer, od 0 do 100</td>
+                    </tr>  
+                    <tr>
+                        <td>vybaveni</td>
+                        <td>základní uzel pro momentálně nošenou výbavu postavy</td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>hlava</td>
+                        <td>název momentálně nošené čepice/helmy</td>
+                        <td>string</td>
+                    </tr> 
+                    <tr>
+                        <td>telo</td>
+                        <td>název momentálně nošeného oblečení</td>
+                        <td>string</td>
+                    </tr> 
+                    <tr>
+                        <td>boty</td>
+                        <td>název momentálně nošených bot</td>
+                        <td>string</td>
+                    </tr> 
+                    <tr>
+                        <td>batoh</td>
+                        <td>název momentálně nošeného batohu</td>
+                        <td>string</td>
+                    </tr> 
+                    <tr>
+                        <td>primarni_zbran</td>
+                        <td>název momentálně nošené primární zbraně</td>
+                        <td>string</td>
+                    </tr> 
+                    <tr>
+                        <td>sekundarni_zbran</td>
+                        <td>název momentálně nošené sekundarní zbraně</td>
+                        <td>string</td>
+                    </tr> 
+                    <tr>
+                        <td>inventar</td>
+                        <td>základní uzel pro inventář postavy v době uložení</td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>id_veci</td>
+                        <td>id věcí která má psotava u sebe</td>
+                        <td>integer, minimální hodnota 0</td>
+                    </tr> 
+                    <tr>
+                        <td>npc</td>
+                        <td>základní uzel pro nehráčské postavy v okolí během uložení</td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>nepratele</td>
+                        <td>uzel pro nepřátelské npc</td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>veci</td>
+                        <td>uzel pro věci, které nepřátelé budou mít na sobě při jejich smrti nebo společníci nesou hráči</td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>agrese</td>
+                        <td>úroveň agresivity vůči hráči nebo jeho nepřátelům v případě společníka</td>
+                        <td>enumerace (pasivni;nizka;stredni;vysoka)</td>
+                    </tr> 
+                    <tr>
+                        <td>spolecnik</td>
+                        <td>základní uzel pro společníky hráče v okolí během uložení</td>
+                        <td></td>
+                    </tr> 
+                </table>
+                <h3>Atributy</h3>
+                <table border="1" id="atributy" title="Tabulka atributů">
+                    <tr>
+                        <th>Atribut</th>
+                        <th>Popis</th>
+                        <th>Omezení hodnot</th>
+                    </tr>
+                    <tr>
+                        <td>directX</td>
+                        <td>verze DirectX při spouštění hry</td>
+                        <td>enumerace (dx10;dx11;dx12)</td>
+                    </tr>
+                    <tr>
+                        <td>id</td>
+                        <td>identifikační číslo uložené hry</td>
+                        <td>integer, nezáporný</td>
+                    </tr>
+                    <tr>
+                        <td>jmeno</td>
+                        <td>jméno uložené hry nebo postavy</td>
+                        <td>string</td>
+                    </tr>
+                    <tr>
+                        <td>obrazek</td>
+                        <td>obrázek uložené hry (poslední co hráč viděl v případě uložení)</td>
+                        <td>png, má vzor: save_scrn(id).png</td>
+                    </tr>
+                    <tr>
+                        <td>xp</td>
+                        <td>počet zkušenostních bodů v době uložení</td>
+                        <td>integer, zezáporný</td>
+                    </tr>
+                    <tr>
+                        <td>nemocen</td>
+                        <td>zda je hráč v době uložení nemocen (vyžaduje antibiotika)</td>
+                        <td>boolean</td>
+                    </tr>
+                    <tr>
+                        <td>zranen</td>
+                        <td>zda je hráč v době uložení zraněn (vyžaduje lékárničku), neváže se na zdraví samotné</td>
+                        <td>boolean</td>
+                    </tr>
+                    <tr>
+                        <td>otraven</td>
+                        <td>zda je hráč v době uložení otráven</td>
+                        <td>boolean</td>
+                    </tr>
+                    <tr>
+                        <td>doba_otraveni</td>
+                        <td>čas, který zbývá jedu v době uložení hry</td>
+                        <td>integer, nezáporný</td>
+                    </tr>
+                    <tr>
+                        <td>dech_podvodou</td>
+                        <td>zadržení dechu, které hráči při uložení zbývá</td>
+                        <td>integer, od 0 do 100</td>
+                    </tr>
+                    <tr>
+                        <td>kvalita</td>
+                        <td>kvalita vybavení, určuje velikost degredace stavu po čas</td>
+                        <td>enumerace (nizka;stredni;dobra;vyborna)</td>
+                    </tr>
+                    <tr>
+                        <td>stav</td>
+                        <td>stav aktuálního předmětu</td>
+                        <td>integer, od 0 do 100</td>
+                    </tr>
+                    <tr>
+                        <td>mnozstvi</td>
+                        <td>množství věci v inventáři</td>
+                        <td>integer, nezáporný</td>
+                    </tr>
+                    <tr>
+                        <td>typ</td>
+                        <td>název nebo typ nepřítele</td>
+                        <td>string</td>
+                    </tr>
+                </table>
+        </section>
+        <hr />
+        <section>
+            <header>
+                <a id="transformace"></a>
+                <h2>Popis transformace</h2>
+                <p>
+                    V transformaci jsem si dal za cí lvytvořit seznam uložených her a výčet momentálně nošeného vybavení postavy v době uložení.<br>
+                    Soubor XSL byl vytvořen v Sublime Text, k transformaci samotné jsem využil <a href="http://www.freeformatter.com/xsl-transformer.html">Free formater</a>.
+                    <br>
+                    Výstupný HTML není validní podle <a href="https://validator.w3.org/">Validator W3.</a>
+                </p>
+                <p>
+                    Transformace pomocí for-each cyklu vybere, a pomocí HTML vypíše seznam všech uložených her, a seznam momentálního vybavení postavy u každé z uložených her.
+                </p>
+            </header>
+        </section>
+        <hr />
+        <section>
+            <a id="zaver"></a>
+            <header>
+                <h2>Závěr</h2>
+            </header>
+                <p>
+                    Cíl semestrální práce bylo vytvoření uložení nastavení aplikce a hodnot jednotlivých uložených her podle zadání.
+                </p>        
+                <p>
+                    Při vytváření této semestrální práce jsem si poprvé v životě ozkoušel sám práci s jazykem XML.<br>Při reálném použitím by však bylo třeba soubor šifrovat v jiném formátu, aby nemohlo dojít k úpravě uložených hodnot.
+                </p>    
+        </section>
+    </main>
+    <footer>
+        <a id="autor"></a>
+        <p>Autor: Tomáš Klapka | Česká Zemědělská Univerzita Praha, dne 17.4.2017 pro předmět Značkovací Jazyky</p>
+    </footer>
+</body>
+</html>

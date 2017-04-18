@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="save_hry">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="nastaveni_Hry">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="zobrazeni">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="rozliseni">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="sirka" type="nezapor"/>
+                          <xs:element name="vyska" type="nezapor"/>
+                          <xs:element name="frekvence">
+                            <xs:simpleType>
+                              <xs:restriction base="xs:integer">
+                                <xs:minInclusive value="60"/>
+                                <xs:maxInclusive value="120"/>
+                              </xs:restriction>
+                            </xs:simpleType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="jas" type="omezeni"/>
+                    <xs:element name="jazyk">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                          <xs:enumeration value="EN"/>
+                          <xs:enumeration value="CZ"/>
+                          <xs:enumeration value="PL"/>
+                          <xs:enumeration value="GE"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="titulky" type="xs:boolean" />
+                    <xs:element name="hud" type="xs:boolean" />
+                    <xs:element name="fov">
+                      <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                          <xs:minInclusive value="50"/>
+                          <xs:maxInclusive value="360"/>
+                        </xs:restriction>
+                      </xs:simpleType>
+                    </xs:element>
+                    <xs:element name="barvoslepost" type="xs:boolean" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="graficke_nastaveni">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="kvalita_textur" type="nastaveni" />
+                    <xs:element name="kvalita_stinu" type="nastaveni" />
+                    <xs:element name="kvalita_efektu" type="nastaveni" />
+                    <xs:element name="post_proces" type="xs:boolean" />
+                    <xs:element name="odrazy" type="xs:boolean" />
+                    <xs:element name="kvalita_odrazu" type="nastaveni" />
+                  </xs:sequence>
+                  <xs:attribute name="directX" type="direct" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="nastavení_zvuku">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="celkova_hlasitost" type="omezeni"/>
+                    <xs:element name="hlasitost_efektu" type="omezeni" />
+                    <xs:element name="hlasitost_dialogu" type="omezeni" />
+                    <xs:element name="hlasitost_hudby" type="omezeni" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="ovladani">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="citlivost_mysi" type="omezeni"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="savy">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="save">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="informace">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="datum" type="xs:date" />
+                          <xs:element name="cas" type="xs:time" />
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="postava" maxOccurs="1" minOccurs="1">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="pozice" maxOccurs="1" minOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="x" type="nezapor"/>
+                                <xs:element name="y" type="nezapor"/>
+                                <xs:element name="z" type="nezapor"/>
+                                <xs:element name="rotace" type="rotace"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="staty" maxOccurs="1" minOccurs="1">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="level">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="nezapor">
+                                        <xs:attribute name="xp" type="nezapor" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="zdraví">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="nezapor">
+                                        <xs:attribute name="nemocen" type="xs:boolean" use="required" />
+                                        <xs:attribute name="zranen" type="xs:boolean" use="required" />
+                                        <xs:attribute name="otraven" type="xs:boolean" use="required" />
+                                        <xs:attribute name="doba_otraveni" type="nezapor" use="required" />
+                                        <xs:attribute name="dech_podvodou" type="nezapor" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="vydrz" type="stav"/>
+                                <xs:element name="teplo" type="stav" />
+                                <xs:element name="hlad" type="stav" />
+                                <xs:element name="zizen" type="stav" />
+                                <xs:element name="unava" type="stav" />
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="vybaveni">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="hlava">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="kvalita" type="kvalita" use="required"/>
+                                        <xs:attribute name="stav" type="stav" use="required"/>
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="telo">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="kvalita" type="kvalita" use="required"/>
+                                        <xs:attribute name="stav" type="stav" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="boty">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="kvalita" type="kvalita" use="required" />
+                                        <xs:attribute name="stav" type="stav" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="batoh">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="kvalita" type="kvalita" use="required" />
+                                        <xs:attribute name="stav" type="stav" use="required" />
+                                        <xs:attribute name="nosnost" type="nezapor" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="primarni_zbran">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="kvalita" type="kvalita" use="required" />
+                                        <xs:attribute name="stav" type="stav" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="sekundarni_zbran">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="xs:string">
+                                        <xs:attribute name="kvalita" type="kvalita" use="required" />
+                                        <xs:attribute name="stav" type="stav" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="inventar">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element maxOccurs="unbounded" name="id_veci">
+                                  <xs:complexType>
+                                    <xs:simpleContent>
+                                      <xs:extension base="nezapor">
+                                        <xs:attribute name="mnozstvi" type="nezapor" use="required" />
+                                      </xs:extension>
+                                    </xs:simpleContent>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="jmeno" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="npc">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element minOccurs="0" name="nepratele">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="pozice">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="x" type="nezapor"/>
+                                      <xs:element name="y" type="nezapor"/>
+                                      <xs:element name="z" type="nezapor"/>
+                                      <xs:element name="rotace" type="rotace"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="staty">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="level" type="nezapor"/>
+                                      <xs:element name="zdraví">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="nezapor">
+                                              <xs:attribute name="otraven" type="xs:boolean" use="required" />
+                                              <xs:attribute name="zranen" type="xs:boolean" use="required" />
+                                              <xs:attribute name="doba_otraveni" type="nezapor" use="required" />
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="vydrz" type="stav"/>
+                                      <xs:element name="agrese" type="agrese" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="veci">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element maxOccurs="unbounded" name="id_veci">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="nezapor">
+                                              <xs:attribute name="mnozstvi" type="nezapor" use="required" />
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="typ" type="xs:string" use="required" />
+                              <xs:attribute name="id" type="nezapor" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element minOccurs="0" name="spolecnik">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="pozice">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="x" type="nezapor"/>
+                                      <xs:element name="y" type="nezapor" />
+                                      <xs:element name="z" type="nezapor"/>
+                                      <xs:element name="rotace" type="rotace" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="staty">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="level">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="nezapor">
+                                              <xs:attribute name="xp" type="nezapor" use="required" />
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="zdraví">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="nezapor">
+                                              <xs:attribute name="oraven" type="xs:boolean" use="required" />
+                                              <xs:attribute name="zranen" type="xs:boolean" use="required" />
+                                              <xs:attribute name="doba_otraveni" type="nezapor" use="required" />
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element name="vydrz" type="stav"/>
+                                      <xs:element name="agrese" type="agrese" />
+                                      <xs:element name="hlad" type="stav" />
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="vybaveni">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="telo">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                              <xs:attribute name="kvalita" type="kvalita" use="required" />
+                                              <xs:attribute name="stav" type="stav" use="required" />
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element name="veci">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="id_veci">
+                                        <xs:complexType>
+                                          <xs:simpleContent>
+                                            <xs:extension base="nezapor">
+                                              <xs:attribute name="mnozstvi" type="nezapor" use="required" />
+                                            </xs:extension>
+                                          </xs:simpleContent>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                              <xs:attribute name="typ" type="xs:string" use="required" />
+                              <xs:attribute name="id" type="nezapor" use="required" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="id" type="nezapor" use="required" />
+                  <xs:attribute name="jmeno" type="xs:string" use="required" />
+                  <xs:attribute name="obrazek" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="kvalita">
+    <xs:restriction base ="xs:string">
+      <xs:enumeration value="nizka"/>
+      <xs:enumeration value="stredni"/>
+      <xs:enumeration value="dobra"/>
+      <xs:enumeration value="vyborna"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="direct">
+    <xs:restriction base ="xs:string">
+      <xs:enumeration value="dx10"/>
+      <xs:enumeration value="dx11"/>
+      <xs:enumeration value="dx12"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="nastaveni">
+    <xs:restriction base ="xs:string">
+      <xs:enumeration value="nizka"/>
+      <xs:enumeration value="stredni"/>
+      <xs:enumeration value="vysoka"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="agrese">
+    <xs:restriction base ="xs:string">
+      <xs:enumeration value="pasivni"/>
+      <xs:enumeration value="nizka"/>
+      <xs:enumeration value="stredni"/>
+      <xs:enumeration value="vysoka"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="stav">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="omezeni">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="nezapor">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="rotace">
+    <xs:restriction base="xs:integer">
+      <xs:minInclusive value="0"/>
+      <xs:maxInclusive value="360"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
